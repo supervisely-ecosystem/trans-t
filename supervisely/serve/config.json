@@ -11,7 +11,7 @@
   "docker_image": "supervisely/trans-t:1.0.3",
   "main_script": "supervisely/serve/src/main.py",
   "task_location": "application_sessions",
-  "icon": "https://imgur.com/lc4jipY.png",
+  "icon": "supervisely/serve/media/icon.png",
   "icon_cover": true,
   "isolate": true,
   "headless": true,
