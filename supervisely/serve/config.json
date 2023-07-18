@@ -16,6 +16,7 @@
   "isolate": true,
   "headless": true,
   "need_gpu": true,
+  "gpu": "required",
   "instance_version": "6.4.29",
   "restart_policy": "on_error",
   "session_tags": [
