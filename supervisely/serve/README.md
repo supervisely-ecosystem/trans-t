@@ -1,9 +1,4 @@
 <div align="center" markdown>
-
-🔥🔥🔥 Check out our [youtube tutorial](https://youtu.be/nyMilMvF3FM) and the [Our Complete Guide to Object Tracking in our blog](https://supervisely.com/blog/complete-guide-to-object-tracking-best-ai-models-tools-and-methods-in-2023/)
-
-<a href="https://youtu.be/nyMilMvF3FM" target="_blank"><img src="https://github.com/supervisely/blog-raw-media-content/assets/106374579/1c397223-0793-4130-bbcd-a0e7ea076fe2"/></a>
-
   
 # TransT object tracking (CVPR2021)
 
@@ -32,7 +27,9 @@ state-of-the art interactive object tracking (CVPR2021) integrated into Supervis
 
 </div>
 
+🔥🔥🔥 Check out our [youtube tutorial](https://youtu.be/nyMilMvF3FM) and the [Our Complete Guide to Object Tracking in our blog](https://supervisely.com/blog/complete-guide-to-object-tracking-best-ai-models-tools-and-methods-in-2023/)
 
+<a href="https://youtu.be/nyMilMvF3FM" target="_blank"><img src="https://github.com/supervisely/blog-raw-media-content/assets/106374579/1c397223-0793-4130-bbcd-a0e7ea076fe2"/></a>
 
 
 # Original work
