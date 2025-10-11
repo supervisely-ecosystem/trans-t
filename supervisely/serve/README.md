@@ -25,7 +25,7 @@ state-of-the art interactive object tracking (CVPR2021) integrated into Supervis
   <a href="#Demo">Demo</a> 
 </p>
 
-[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](../../../../../../supervisely-ecosystem/trans-t/supervisely/serve)
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/trans-t/supervisely/serve)
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervisely.com/slack)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/trans-t)
 [![views](https://app.supervisely.com/img/badges/views/supervisely-ecosystem/trans-t/supervisely/serve.png)](https://supervisely.com)
@@ -82,7 +82,7 @@ After the Feature Fusion Network, the feature maps are fed into the predicted he
 
 ---
 
-1. Add [TransT object tracking (CVPR2021)](../../../../../../supervisely-ecosystem/trans-t/supervisely/serve) from Ecosystem
+1. Add [TransT object tracking (CVPR2021)](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/trans-t/supervisely/serve) from Ecosystem
 
 <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/trans-t/supervisely/serve" src="https://imgur.com/huFAU48.png" width="600px" style='padding-bottom: 20px'/>  
 
