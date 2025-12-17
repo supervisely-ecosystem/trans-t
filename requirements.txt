@@ -2,7 +2,7 @@ supervisely==6.73.486
 matplotlib==3.4.2
 pandas==1.4.2
 tqdm==4.62.3
-tb-nightly==2.7.0a20210908
+tensorboard==2.7.0
 visdom==0.1.8.9
 scikit-image==0.18.3
 tikzplotlib==0.9.12
