@@ -53,3 +53,5 @@ RUN cd /trans-t/data/model/ && wget --no-check-certificate 'https://github.com/s
 
 RUN mv /trans-t/ /root/trans-t/
 
+
+LABEL python_sdk_version="6.73.486"
