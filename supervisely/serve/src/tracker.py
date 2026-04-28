@@ -21,6 +21,7 @@ class TrackerContainer:
 
         self.geometries = []
         self.frames_indexes = []
+        self.tracked_figures_count = {}
 
         self.add_geometries()
         self.add_frames_indexes()
@@ -32,6 +33,32 @@ class TrackerContainer:
             figure = self.api.video.figure.get_info_by_id(figure_id)
             geometry = sly.deserialize_geometry(figure.geometry_type, figure.geometry)
             self.geometries.append(geometry)
+
+    def notify_progress(self, frame_start, frame_end, current, total):
+        response = self.api.post(
+            "videos.notify-annotation-tool",
+            {
+                "type": "videos:fetch-figures-in-range",
+                "data": {
+                    "trackId": self.track_id,
+                    "videoId": self.video_id,
+                    "frameRange": [frame_start, frame_end],
+                    "progress": {
+                        "current": current,
+                        "total": total,
+                    },
+                    "trackedFigures": {
+                        str(figure_id): count
+                        for figure_id, count in sorted(self.tracked_figures_count.items())
+                    },
+                },
+            },
+        )
+        return response.json().get("stopped", False)
+
+    def update_tracked_figures_count(self, figure_id):
+        figure_id = str(figure_id)
+        self.tracked_figures_count[figure_id] = self.tracked_figures_count.get(figure_id, 0) + 1
 
     def add_frames_indexes(self):
         total_frames = self.api.video.get_info_by_id(self.video_id).frames_count
@@ -54,11 +81,12 @@ class TrackerContainer:
             if single_geometry.geometry_name() != 'rectangle':
                 current_progress += len(self.frames_indexes)
 
-                self.api.video.notify_progress(self.track_id, self.video_id,
-                                               min(self.frames_indexes),
-                                               max(self.frames_indexes),
-                                               current_progress,
-                                               len(self.frames_indexes) * len(all_figures))
+                self.notify_progress(
+                    min(self.frames_indexes),
+                    max(self.frames_indexes),
+                    current_progress,
+                    len(self.frames_indexes) * len(all_figures),
+                )
                 continue
 
             figure_ids = [single_figure]
@@ -98,19 +126,20 @@ class TrackerContainer:
                                                                       bbox_predicted.to_json(),
                                                                       bbox_predicted.geometry_name(),
                                                                       self.track_id)
+                        self.update_tracked_figures_count(figure_id)
 
                         current_progress += 1
                         if (current_progress % notify_every == 0 and enumerate_frame_index != 0) or frame_index == \
                                 self.frames_indexes[-1]:
-                            need_stop = self.api.video.notify_progress(self.track_id, self.video_id,
-                                                                    min(frame_start, frame_index),
-                                                                    max(frame_start, frame_index),
-                                                                    current_progress,
-                                                                    len(self.frames_indexes) * len(all_figures))
+                            need_stop = self.notify_progress(
+                                min(frame_start, frame_index),
+                                max(frame_start, frame_index),
+                                current_progress,
+                                len(self.frames_indexes) * len(all_figures),
+                            )
                             frame_start = None
                             if need_stop:
                                 g.logger.debug('Tracking was stopped', extra={'track_id': self.track_id})
                                 return
                 g.logger.info(f'Process frame {enumerate_frame_index} — {frame_index}')
         g.logger.info(f'Tracking completed')
-
