@@ -10,7 +10,7 @@ torchaudio==0.7.0
 
 matplotlib==3.4.2
 pandas==1.4.2
-tqdm==4.62.3
+tqdm>=4.66.3,<5.0.0
 tb-nightly==2.7.0a20210901
 visdom==0.1.8.9
 scikit-image==0.18.3

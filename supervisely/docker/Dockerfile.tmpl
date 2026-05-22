@@ -36,7 +36,7 @@ RUN set -eux; \
   /opt/venv/bin/python -m pip install --no-cache-dir --upgrade pip wheel; \
   /opt/venv/bin/python -m pip install --no-cache-dir setuptools==59.5.0 "numpy<2" cython==0.29.24; \
   if [ -s /tmp/requirements.txt ]; then \
-    /opt/venv/bin/python -m pip wheel --no-cache-dir -r /tmp/requirements.txt -w /tmp/wheels; \
+    /opt/venv/bin/python -m pip wheel --no-cache-dir --no-build-isolation -r /tmp/requirements.txt -w /tmp/wheels; \
   else \
     mkdir -p /tmp/wheels; \
   fi
