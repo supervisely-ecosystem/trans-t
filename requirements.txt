@@ -1,4 +1,4 @@
-git+https://github.com/supervisely/supervisely.git@tracked-frames
+git+https://github.com/supervisely/supervisely.git@test-autotrack
 
 -f https://download.pytorch.org/whl/torch_stable.html
 
