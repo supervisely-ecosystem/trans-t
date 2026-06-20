@@ -12,20 +12,20 @@ torchvision==0.25.0 ; platform_system != "Linux"
 torchaudio==2.10.0+cu128 ; platform_system == "Linux"
 torchaudio==2.10.0 ; platform_system != "Linux"
 
-matplotlib==3.4.2
+matplotlib==3.5.3
 pandas==1.4.2
 tqdm>=4.66.3,<5.0.0
 tb-nightly==2.7.0a20210901
 visdom==0.1.8.9
-scikit-image==0.18.3
+scikit-image==0.19.3
 tikzplotlib==0.9.12
 gdown==3.13.0
 cython==0.29.24
-scipy==1.7.1
-pycocotools==2.0.2
+scipy==1.7.3
+pycocotools==2.0.10
 jpeg4py==0.1.4
 wget==3.2
 yacs==0.1.8
-shapely==1.7.1
+shapely==1.8.5.post1
 python-dotenv==0.19.2
 opencv-python==4.10.0.84
