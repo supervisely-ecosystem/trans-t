@@ -8,7 +8,7 @@
     "serve"
   ],
   "description": "serve and use in videos annotator",
-  "docker_image": "supervisely/trans-t:hdi-test-20260522",
+  "docker_image": "supervisely/trans-t:6.73.571",
   "main_script": "supervisely/serve/src/main.py",
   "task_location": "application_sessions",
   "icon": "https://imgur.com/lc4jipY.png",
@@ -24,10 +24,12 @@
   ],
   "community_agent": false,
   "license": {
-    "type": "GPL-3.0" 
+    "type": "GPL-3.0"
   },
-  "access_restriction": [{
+  "access_restriction": [
+    {
       "instance": "community_free",
       "message": "The best object trackers are already deployed in the Supervisely Cloud and are available for auto-labeling to all platform users. The number of API calls and the ability to run this app on your own agent (GPU) are limited for Free accounts. To increase usage limits or run the app on your GPU, switch to the <a href=\"/billing\">Pro</a> plan or request the <a href=\"https://supervisely.com/contact-us/\" target=\"_blank\">Enterprise</a> Edition."
-  }]
+    }
+  ]
 }

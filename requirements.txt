@@ -1,12 +1,16 @@
 supervisely==6.73.571
 
--f https://download.pytorch.org/whl/torch_stable.html
+# RTX 50 / Blackwell agents require CUDA 12.8-capable torch wheels.
+--extra-index-url https://download.pytorch.org/whl/cu128
 
-# Torch 1.7 wheels are built against the NumPy 1.x ABI.
+# Keep the legacy tracking stack on NumPy 1.x-compatible wheels.
 numpy<2
-torch==1.7.0+cu110
-torchvision==0.8.1+cu110
-torchaudio==0.7.0
+torch==2.10.0+cu128 ; platform_system == "Linux"
+torch==2.10.0 ; platform_system != "Linux"
+torchvision==0.25.0+cu128 ; platform_system == "Linux"
+torchvision==0.25.0 ; platform_system != "Linux"
+torchaudio==2.10.0+cu128 ; platform_system == "Linux"
+torchaudio==2.10.0 ; platform_system != "Linux"
 
 matplotlib==3.4.2
 pandas==1.4.2
