@@ -27,5 +27,5 @@ jpeg4py==0.1.4
 wget==3.2
 yacs==0.1.8
 shapely==1.8.5.post1
-python-dotenv==0.19.2
+python-dotenv==1.2.2
 opencv-python==4.10.0.84
