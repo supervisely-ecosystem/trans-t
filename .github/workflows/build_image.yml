@@ -1,16 +1,15 @@
-name: Docker Image Build
+name: Manual Build App Image From Template
+run-name: Manual Build App Image for "${{ github.event.repository.name }}"
 
 on:
   workflow_dispatch:
     inputs:
       tag_version:
-        description: 'Docker Image Tag (without "v")'
-        required: true
-        type: string
+        description: "Tag version to build image for"
+        required: false
       tag_ref_name:
         description: "Runtime base image tag/ref to use; defaults to tag_version"
         required: false
-        type: string
       enable_cve_checks:
         description: "Enable CVE checks during image build"
         required: false
