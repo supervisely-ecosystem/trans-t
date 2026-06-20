@@ -36,7 +36,7 @@ jobs:
     uses: supervisely-ecosystem/workflows/.github/workflows/build_image_from_template.yml@master
     with:
       tag_version: "${{ inputs.tag_version }}"
-      tag_ref_name: "${{ inputs.tag_ref_name }}"
+      tag_ref_name: "${{ inputs.tag_ref_name || '6.73.567' }}"
       dockerfile_template_path: "supervisely/docker/Dockerfile.tmpl"
       cve_checks: ${{ inputs.enable_cve_checks }}
       skip_tag_check: ${{ inputs.skip_tag_check }}
